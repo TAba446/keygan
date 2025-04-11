@@ -1,118 +1,33 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>رمزگذار کد</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      direction: rtl;
-      padding: 30px;
-      background: #f0f0f0;
+<script>
+  const key = "X8besJ3wZdXuVF";
+
+  function encryptText(text) {
+    let result = '';
+    for (let i = 0; i < text.length; i++) {
+      let charCode = text.charCodeAt(i);
+      let keyChar = key.charCodeAt(i % key.length);
+      let encryptedCharCode = (charCode + keyChar) % 65535; // جلوگیری از overflow
+      result += String.fromCharCode(encryptedCharCode);
     }
+    // تبدیل به base64 به صورت ایمن
+    return btoa(unescape(encodeURIComponent(result)));
+  }
 
-    h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 30px;
+  function encrypt() {
+    const input = document.getElementById('input').value;
+    if (!input.trim()) {
+      alert("لطفاً کدی وارد کنید!");
+      return;
     }
+    const encoded = encryptText(input);
+    document.getElementById('output').value = encoded;
+  }
 
-    .container {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 450px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .box label {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    textarea {
-      width: 100%;
-      height: 150px;
-      font-family: monospace;
-      font-size: 14px;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: vertical;
-    }
-
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 5px;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>رمزگذار کد</h1>
-
-  <div class="container">
-    <div class="box">
-      <label>کد را وارد کنید:</label>
-      <textarea id="input" placeholder="کد HTML، JS یا هر متن دیگر..."></textarea>
-      <button onclick="encrypt()">تبدیل</button>
-    </div>
-
-    <div class="box">
-      <label>خروجی رمز شده:</label>
-      <textarea id="output" readonly placeholder="خروجی رمز شده اینجا نمایش داده می‌شود..."></textarea>
-      <button onclick="copyOutput()">کپی خروجی</button>
-    </div>
-  </div>
-
-  <script>
-    const key = "X8besJ3wZdXuVF";
-
-    function encryptText(text) {
-      let result = '';
-      for (let i = 0; i < text.length; i++) {
-        let charCode = text.charCodeAt(i);
-        let keyChar = key.charCodeAt(i % key.length);
-        result += String.fromCharCode(charCode + keyChar);
-      }
-      return btoa(result);
-    }
-
-    function encrypt() {
-      const input = document.getElementById('input').value;
-      const encoded = encryptText(input);
-      document.getElementById('output').value = encoded;
-    }
-
-    function copyOutput() {
-      const output = document.getElementById('output');
-      output.select();
-      output.setSelectionRange(0, 99999);
-      document.execCommand('copy');
-      alert("کپی شد!");
-    }
-  </script>
-
-</body>
-</html>
+  function copyOutput() {
+    const output = document.getElementById('output');
+    output.select();
+    output.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    alert("کپی شد!");
+  }
+</script>

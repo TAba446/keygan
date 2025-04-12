@@ -41,7 +41,7 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: relative;
-            height: 300px; /* ارتفاع بیشتر برای کارت */
+            height: 320px;
         }
         
         .card-image {
@@ -57,13 +57,37 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
             border-radius: 0 0 12px 12px;
             display: flex;
+            align-items: center;
+            height: 90px;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .text-content {
+            display: flex;
             flex-direction: column;
-            height: 80px; /* ارتفاع نوار شیشه‌ای */
         }
         
         .event-title {
@@ -76,41 +100,23 @@
         .event-description {
             font-size: 14px;
             color: #444;
-            margin-bottom: 12px;
         }
         
-        .buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .button {
-            padding: 6px 12px;
-            border-radius: 6px;
+        .open-button {
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
             font-size: 14px;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            border: none;
+            backdrop-filter: blur(5px);
             transition: all 0.2s;
         }
         
-        .button-outline {
-            border: 1px solid rgba(0,0,0,0.1);
-            background-color: rgba(255,255,255,0.7);
-            color: #000;
-        }
-        
-        .button-outline:hover {
-            background-color: rgba(255,255,255,0.9);
-        }
-        
-        .button-filled {
-            background-color: #000;
-            color: white;
-            border: none;
-        }
-        
-        .button-filled:hover {
-            background-color: #333;
+        .open-button:hover {
+            background-color: rgba(0,0,0,0.9);
         }
     </style>
 </head>
@@ -124,12 +130,14 @@
         <div class="card">
             <div class="card-image"></div>
             <div class="glass-bar">
-                <div class="event-title">MLS Is Back!</div>
-                <div class="event-description">Watch Major League Soccer all season long.</div>
-                <div class="buttons">
-                    <button class="button button-outline">Home of</button>
-                    <button class="button button-filled">Open</button>
+                <div class="logo-area">
+                    <div class="logo">MLS</div>
+                    <div class="text-content">
+                        <div class="event-title">MLS Is Back!</div>
+                        <div class="event-description">Watch Major League Soccer all season long.</div>
+                    </div>
                 </div>
+                <button class="open-button">Open</button>
             </div>
         </div>
     </div>

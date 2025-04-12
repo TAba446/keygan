@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>اداره کل مدیریت بحران</title>
+  <!-- فونت فارسی -->
   <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" />
   <style>
     body {
@@ -14,6 +15,7 @@
       direction: rtl;
     }
 
+    /* هدر */
     .header {
       display: flex;
       align-items: center;
@@ -39,6 +41,7 @@
       margin: 0;
     }
 
+    /* جست‌وجو */
     .search-box {
       display: flex;
       align-items: center;
@@ -63,6 +66,7 @@
       height: 20px;
     }
 
+    /* فیلترهای سریع */
     .quick-filters {
       display: flex;
       gap: 10px;
@@ -77,14 +81,15 @@
       font-size: 13px;
       cursor: pointer;
       transition: background-color 0.3s;
-      text-decoration: none;
-      color: inherit;
+      text-decoration: none; /* حذف خط زیر لینک */
+      color: inherit; /* استفاده از رنگ متن اصلی */
     }
 
     a.filter-box:hover {
       background-color: #d0d0d0;
     }
 
+    /* بخش عنوان + دکمه بیشتر */
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -111,6 +116,7 @@
       height: 16px;
     }
 
+    /* کارت‌ها */
     .card-section {
       display: flex;
       overflow-x: auto;
@@ -146,6 +152,7 @@
       color: #555;
     }
 
+    /* حذف خط زیر لینک‌ها در کارت‌ها */
     .card-section a {
       text-decoration: none;
       color: inherit;
@@ -157,6 +164,7 @@
       color: inherit;
     }
 
+    /* ریسپانسیو */
     @media screen and (max-width: 768px) {
       .card {
         min-width: 160px;
@@ -177,6 +185,7 @@
       }
     }
 
+    /* فوتر */
     footer {
       text-align: center;
       padding: 10px;
@@ -188,17 +197,17 @@
 <body>
 
   <!-- هدر -->
-  <div class="header">
-    <a href="https://bohran.sbportal.ir/" style="text-decoration: none; color: inherit;">
-      <div class="header-text">
-        <h1>اداره کل مدیریت بحران</h1>
-        <h2>استان سیستان و بلوچستان</h2>
-      </div>
-    </a>
-    <a href="https://bohran.sbportal.ir/">
-      <img src="Logo.png" class="logo" alt="لوگو" />
-    </a>
-  </div>
+ <div class="header">
+  <a href="https://bohran.sbportal.ir/" style="text-decoration: none; color: inherit;">
+    <div class="header-text">
+      <h1>اداره کل مدیریت بحران</h1>
+      <h2>استان سیستان و بلوچستان</h2>
+    </div>
+  </a>
+  <a href="https://bohran.sbportal.ir/">
+    <img src="Logo.png" class="logo" alt="لوگو" />
+  </a>
+ </div>
 
   <!-- جست‌وجو -->
   <div class="search-box">
@@ -212,76 +221,67 @@
   </div>
 
   <!-- دانستنی ها -->
+<div class="section-header">
+  <div class="section-title">دانستی ها</div>
+  <a href="popular/index.html" class="more-button">
+    <span>بیشتر</span>
+    <img src="more.png" alt="بیشتر" />
+  </a>
+</div>
+
+<div class="card-section">
+  <a class="card" href="popular/card9/index.html">
+    <img src="popular/image-card9.png" alt="تصویر 9"/>
+    <div class="card-title">تئوری زمین ساخت</div>
+    <div class="card-text">سال ١٩۶٧ میلادی مورگان(ژئوفیزیکدان آمریکایی)</div>
+  </a>
+  <a class="card" href="popular/card8/index.html">
+    <img src="popular/image-card8.png" alt="تصویر 8"/>
+    <div class="card-title">کره زمین</div>
+    <div class="card-text">لایه‌بندی کره زمین</div>
+  </a>
+  <a href="popular/card7/index.html" class="card">
+    <img src="popular/image-card7.png" alt="تصویر 7" />
+    <div class="card-title">بیست و دوم فروردین</div>
+    <div class="card-text">روز ایمنی ورود به فضای بسته</div>
+  </a>
+  <a href="popular/card6/index.html" class="card">
+    <img src="popular/image-card6.png" alt="تصویر 6" />
+    <div class="card-title">منشا پیدایش مخاطرات طبیعی</div>
+    <div class="card-text">"آب و هوایی" و "زمین‌ساختی"</div>
+  </a>
+  <a href="popular/card5/index.html" class="card">
+    <img src="popular/image-card5.png" alt="تصویر 5" />
+    <div class="card-title">موضوعات اصلی مواد قانون مدیریت بحران کشور</div>
+    <div class="card-text">(مصوب ۱۳۹۸/۵/۷)</div>
+  </a>
+  <a href="popular/card1/index.html" class="card">
+    <img src="popular/image-card1.png" alt="تصویر ۱" />
+    <div class="card-title">مدیریت شرایط اضطراری FEMA</div>
+    <div class="card-text">گام های تدوین برنامه عملیات اضطراری</div>
+  </a>
+</div>
+   
+
+  <!-- زلزله های استان-->
   <div class="section-header">
-    <div class="section-title">دانستی ها</div>
-    <a href="popular/index.html" class="more-button">
+    <div class="section-title"> زلزله های استان(1404)</div>
+    <a href="earthquake/index.html" class="more-button">
       <span>بیشتر</span>
       <img src="more.png" alt="بیشتر" />
     </a>
   </div>
-
   <div class="card-section">
-    <a class="card" href="popular/card9/index.html">
-      <img src="popular/image-card9.png" alt="تصویر 9"/>
-      <div class="card-title">تئوری زمین ساخت</div>
-      <div class="card-text">سال ١٩۶٧ میلادی مورگان(ژئوفیزیکدان آمریکایی)</div>
-    </a>
-    <a class="card" href="popular/card8/index.html">
-      <img src="popular/image-card8.png" alt="تصویر 8"/>
-      <div class="card-title">کره زمین</div>
-      <div class="card-text">لایه‌بندی کره زمین</div>
-    </a>
-    <a href="popular/card7/index.html" class="card">
-      <img src="popular/image-card7.png" alt="تصویر 7" />
-      <div class="card-title">بیست و دوم فروردین</div>
-      <div class="card-text">روز ایمنی ورود به فضای بسته</div>
-    </a>
-    <a href="popular/card6/index.html" class="card">
-      <img src="popular/image-card6.png" alt="تصویر 6" />
-      <div class="card-title">منشا پیدایش مخاطرات طبیعی</div>
-      <div class="card-text">"آب و هوایی" و "زمین‌ساختی"</div>
-    </a>
-    <a href="popular/card5/index.html" class="card">
-      <img src="popular/image-card5.png" alt="تصویر 5" />
-      <div class="card-title">موضوعات اصلی مواد قانون مدیریت بحران کشور</div>
-      <div class="card-text">(مصوب ۱۳۹۸/۵/۷)</div>
-    </a>
-    <a href="popular/card1/index.html" class="card">
-      <img src="popular/image-card1.png" alt="تصویر ۱" />
-      <div class="card-title">مدیریت شرایط اضطراری FEMA</div>
-      <div class="card-text">گام های تدوین برنامه عملیات اضطراری</div>
-    </a>
+    <a href="earthquake/card1/index.html" class="card">
+      <img src="earthquake/image-card1.png" alt="تصویر ۱" />
+      <div class="card-title">1404/01/15 </div>
+      <div class="card-text"> گشت ،استان سیستان و بلوچستان  </div>
+    </a> 
   </div>
 
-  <!-- زلزله‌های استان (قابل تکرار) -->
+  <!-- زلزله -->
   <div class="section-header">
-    <div class="section-title">زلزله‌های استان (۱۴۰۴)</div>
-    <a href="earthquake-1404/index.html" class="more-button">
-      <span>بیشتر</span>
-      <img src="more.png" alt="بیشتر" />
-    </a>
-  </div>
-  <div class="card-section">
-    <a href="earthquake-1404/card1/index.html" class="card">
-      <img src="earthquake-1404/image-card1.png" alt="1404/01/15" />
-      <div class="card-title">1404/01/15</div>
-      <div class="card-text">گشت، استان سیستان و بلوچستان</div>
-    </a>
-    <a href="earthquake-1404/card2/index.html" class="card">
-      <img src="earthquake-1404/image-card2.png" alt="1404/03/10" />
-      <div class="card-title">1404/03/10</div>
-      <div class="card-text">چابهار، مرز دریایی عمان</div>
-    </a>
-    <a href="earthquake-1404/card3/index.html" class="card">
-      <img src="earthquake-1404/image-card3.png" alt="1404/06/22" />
-      <div class="card-title">1404/06/22</div>
-      <div class="card-text">زاهدان، حومه شمالی</div>
-    </a>
-  </div>
-
-  <!-- زمین‌لرزه -->
-  <div class="section-header">
-    <div class="section-title">زمین‌لرزه</div>
+    <div class="section-title">زمین لرزه</div>
     <a href="earthquake-top/index.html" class="more-button">
       <span>بیشتر</span>
       <img src="more.png" alt="بیشتر" />
@@ -308,8 +308,9 @@
       <div class="card-title">سابقه لرزه خیزی در منطقه و وقوع زمین لرزه میانمار</div>
       <div class="card-text">بزرگی ٧.٧ ریشتر</div>
     </a>
+    
   </div>
-
+  
   <!-- فوتر -->
   <footer>
     طراح وب‌سایت: مهندس طاها سرگزی

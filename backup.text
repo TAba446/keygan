@@ -1,150 +1,198 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بزرگترین رویدادهای امروز</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-            direction: rtl;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>رویدادها</title>
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+  <!-- فونت ایران‌زر -->
+  <link href="https://cdn.fontcdn.ir/Font/Persian/IranYekan/IranYekan.css" rel="stylesheet" type="text/css" />
 
-        .title {
-            font-weight: bold;
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: right;
-        }
+  <style>
+    body {
+      font-family: 'IranYekan', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      direction: rtl;
+    }
 
-        .subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-            text-align: right;
-        }
+    .section-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-align: right;
+    }
 
-        .divider {
-            height: 1px;
-            background-color: #ddd;
-            margin: 20px 0;
-        }
+    .subtitle {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 15px;
+      text-align: right;
+    }
 
-        .card {
-            background-color: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: relative;
-            height: 420px;
-        }
+    .cards-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
 
-        .card-image {
-            width: 100%;
-            height: 100%;
-            background-image: url('https://taba446.github.io/keygan/image-card.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+    .cards-container::-webkit-scrollbar {
+      display: none;
+    }
 
-        .glass-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            border-radius: 0 0 12px 12px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 60px;
-        }
+    .card {
+      flex: 0 0 340px;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      height: 420px;
+      margin-left: 20px;
+      scroll-snap-align: start;
+      user-select: none;
+      cursor: grab;
+    }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            flex-grow: 1;
-        }
+    .card-image {
+      width: 100%;
+      height: 100%;
+      background-image: url('https://taba446.github.io/keygan/image-card.jpg');
+      background-size: cover;
+      background-position: center;
+    }
 
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            margin-left: 12px;
-            object-fit: cover;
-        }
+    .glass-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+      border-radius: 0 0 12px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
 
-        .text-content {
-            display: flex;
-            flex-direction: column;
-        }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      overflow: hidden;
+    }
 
-        .event-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 2px;
-            color: #000;
-        }
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      margin-left: 12px;
+      object-fit: cover;
+    }
 
-        .event-description {
-            font-size: 14px;
-            color: #444;
-        }
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-        .open-button {
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            border: none;
-            backdrop-filter: blur(5px);
-            transition: all 0.2s;
-            white-space: nowrap;
-            height: 40px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .event-title {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 2px;
+      color: #000;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-        .open-button:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-    </style>
+    .event-description {
+      font-size: 14px;
+      color: #444;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .open-button {
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      border: none;
+      backdrop-filter: blur(5px);
+      transition: all 0.2s;
+      white-space: nowrap;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .open-button:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">بزرگترین رویدادهای امروز</div>
-        <div class="subtitle">آنچه می‌توانید تماشا کنید، بازی کنید و لذت ببرید</div>
 
-        <div class="divider"></div>
+  <div class="section-title">بزرگترین رویدادهای امروز</div>
+  <div class="subtitle">آنچه می‌توانید تماشا کنید، بازی کنید و لذت ببرید</div>
 
-        <div class="card">
-            <div class="card-image"></div>
-            <div class="glass-bar">
-                <div class="logo-area">
-                    <img src="mls-logo.png" alt="لوگوی MLS" class="logo">
-                    <div class="text-content">
-                        <div class="event-title">لیگ MLS برگشته است!</div>
-                        <div class="event-description">تمامی فصل لیگ فوتبال آمریکا را تماشا کنید.</div>
-                    </div>
-                </div>
-                <button class="open-button">باز کردن</button>
-            </div>
+  <div class="cards-container">
+    <!-- کارت ۱ -->
+    <div class="card">
+      <div class="card-image"></div>
+      <div class="glass-bar">
+        <div class="logo-area">
+          <img src="mls-logo.png" alt="لوگو" class="logo">
+          <div class="text-content">
+            <div class="event-title">لیگ MLS برگشته است!</div>
+            <div class="event-description">فصل جدید لیگ فوتبال آمریکا را از دست ندهید.</div>
+          </div>
         </div>
+        <button class="open-button">باز کردن</button>
+      </div>
     </div>
+
+    <!-- کارت ۲ -->
+    <div class="card">
+      <div class="card-image"></div>
+      <div class="glass-bar">
+        <div class="logo-area">
+          <img src="mls-logo.png" alt="لوگو" class="logo">
+          <div class="text-content">
+            <div class="event-title">سریال ویژه</div>
+            <div class="event-description">قسمت اول رایگان پخش شد!</div>
+          </div>
+        </div>
+        <button class="open-button">باز کردن</button>
+      </div>
+    </div>
+
+    <!-- کارت ۳ -->
+    <div class="card">
+      <div class="card-image"></div>
+      <div class="glass-bar">
+        <div class="logo-area">
+          <img src="mls-logo.png" alt="لوگو" class="logo">
+          <div class="text-content">
+            <div class="event-title">بازی امشب</div>
+            <div class="event-description">آیا آماده‌ای برای چالش بزرگ؟</div>
+          </div>
+        </div>
+        <button class="open-button">شروع</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

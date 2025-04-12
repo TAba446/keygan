@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>اداره کل مدیریت بحران</title>
+  <!-- فونت فارسی -->
   <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" />
-  <link href="https://cdn.fontcdn.ir/Font/Persian/IranYekan/IranYekan.css" rel="stylesheet" type="text/css" />
   <style>
     body {
       font-family: 'Vazir', sans-serif;
@@ -14,6 +14,8 @@
       padding: 0;
       direction: rtl;
     }
+
+    /* هدر */
     .header {
       display: flex;
       align-items: center;
@@ -22,19 +24,24 @@
       padding: 10px 20px;
       border-bottom: 1px solid #ccc;
     }
+
     .logo {
       width: 48px;
       height: auto;
     }
+
     .header-text h1 {
       font-size: 20px;
       margin: 0 0 5px 0;
     }
+
     .header-text h2 {
       font-size: 14px;
       color: #666;
       margin: 0;
     }
+
+    /* جست‌وجو */
     .search-box {
       display: flex;
       align-items: center;
@@ -45,6 +52,7 @@
       margin: 15px 20px;
       max-width: 400px;
     }
+
     .search-box input {
       border: none;
       outline: none;
@@ -52,16 +60,20 @@
       flex: 1;
       background: transparent;
     }
+
     .search-box img {
       width: 20px;
       height: 20px;
     }
+
+    /* فیلترهای سریع */
     .quick-filters {
       display: flex;
       gap: 10px;
       padding: 0 20px 15px;
       flex-wrap: wrap;
     }
+
     a.filter-box {
       background-color: #e0e0e0;
       padding: 6px 14px;
@@ -69,22 +81,27 @@
       font-size: 13px;
       cursor: pointer;
       transition: background-color 0.3s;
-      text-decoration: none;
-      color: inherit;
+      text-decoration: none; /* حذف خط زیر لینک */
+      color: inherit; /* استفاده از رنگ متن اصلی */
     }
+
     a.filter-box:hover {
       background-color: #d0d0d0;
     }
+
+    /* بخش عنوان + دکمه بیشتر */
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 20px;
     }
+
     .section-title {
       font-size: 16px;
       font-weight: bold;
     }
+
     .more-button {
       display: flex;
       align-items: center;
@@ -93,10 +110,13 @@
       color: #0077cc;
       gap: 5px;
     }
+
     .more-button img {
       width: 16px;
       height: 16px;
     }
+
+    /* کارت‌ها */
     .card-section {
       display: flex;
       overflow-x: auto;
@@ -104,6 +124,7 @@
       padding: 0 20px 30px;
       scroll-snap-type: x mandatory;
     }
+
     .card {
       min-width: 200px;
       max-width: 200px;
@@ -114,155 +135,201 @@
       flex-shrink: 0;
       scroll-snap-align: start;
     }
+
     .card img {
       width: 100%;
       border-radius: 8px;
     }
+
     .card-title {
       font-weight: bold;
       font-size: 14px;
       margin-top: 8px;
     }
+
     .card-text {
       font-size: 13px;
       color: #555;
     }
+
+    /* حذف خط زیر لینک‌ها در کارت‌ها */
     .card-section a {
       text-decoration: none;
       color: inherit;
     }
+
+    .card-section a .card-title,
+    .card-section a .card-text {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ریسپانسیو */
     @media screen and (max-width: 768px) {
       .card {
         min-width: 160px;
         max-width: 160px;
       }
+
       .header-text h1 {
         font-size: 18px;
       }
+
       .header-text h2 {
         font-size: 13px;
       }
+
       .search-box {
         max-width: 100%;
         margin: 15px;
       }
     }
+
+    /* فوتر */
     footer {
       text-align: center;
       padding: 10px;
       background-color: #f1f1f1;
       margin-top: 50px;
     }
-    .subtitle-2 {
-      font-family: 'IranYekan', sans-serif;
-      font-size: 15px;
-      color: #666;
-      margin: -10px 20px 15px;
-    }
-    .cards-container-2 {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 20px 30px;
-      gap: 20px;
-    }
-    .cards-container-2::-webkit-scrollbar {
-      display: none;
-    }
-    .modern-card-2 {
-      flex: 0 0 340px;
-      height: 420px;
-      background-color: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: relative;
-      scroll-snap-align: start;
-      user-select: none;
-    }
-    .card-image-2 {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-    .glass-bar-2 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(15px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
-      border-radius: 0 0 12px 12px;
-    }
-    .logo-area-2 {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      overflow: hidden;
-    }
-    .logo-2 {
-      width: 50px;
-      height: 50px;
-      border-radius: 8px;
-      margin-left: 12px;
-      object-fit: cover;
-    }
-    .text-content-2 {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .event-title-2 {
-      font-family: 'IranYekan', sans-serif;
-      font-size: 17px;
-      font-weight: bold;
-      margin-bottom: 2px;
-      color: #000;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .event-description-2 {
-      font-family: 'IranYekan', sans-serif;
-      font-size: 14px;
-      color: #444;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .open-button-2 {
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-weight: bold;
-      font-size: 13px;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      border: none;
-      white-space: nowrap;
-      height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: 'IranYekan', sans-serif;
-      text-decoration: none;
-    }
-    .open-button-2:hover {
-      background-color: rgba(0, 0, 0, 0.9);
-    }
+    
+<!-- زلزله‌های استان (1404) - طراحی جدید -->
+<link href="https://cdn.fontcdn.ir/Font/Persian/IranYekan/IranYekan.css" rel="stylesheet" type="text/css" />
+
+<style>
+  .section-title-2 {
+    font-family: 'IranYekan', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 0 20px;
+  }
+
+  .subtitle-2 {
+    font-family: 'IranYekan', sans-serif;
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+    padding: 0 20px;
+  }
+
+  .cards-container-2 {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px 30px;
+    gap: 20px;
+  }
+
+  .cards-container-2::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modern-card-2 {
+    flex: 0 0 340px;
+    height: 420px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    scroll-snap-align: start;
+    user-select: none;
+  }
+
+  .card-image-2 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .glass-bar-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .logo-area-2 {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  .logo-2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-left: 12px;
+    object-fit: cover;
+  }
+
+  .text-content-2 {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .event-title-2 {
+    font-family: 'IranYekan', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .event-description-2 {
+    font-family: 'IranYekan', sans-serif;
+    font-size: 14px;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .open-button-2 {
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    white-space: nowrap;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'IranYekan', sans-serif;
+    text-decoration: none;
+  }
+
+  .open-button-2:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
   </style>
+  
 </head>
 <body>
 
-<div class="header">
+  <!-- هدر -->
+ <div class="header">
   <a href="https://bohran.sbportal.ir/" style="text-decoration: none; color: inherit;">
     <div class="header-text">
       <h1>اداره کل مدیریت بحران</h1>
@@ -272,36 +339,63 @@
   <a href="https://bohran.sbportal.ir/">
     <img src="Logo.png" class="logo" alt="لوگو" />
   </a>
-</div>
+ </div>
 
-<div class="search-box">
-  <input type="text" placeholder="جست و جو..." />
-  <img src="search.gif" alt="جست‌وجو" />
-</div>
+  <!-- جست‌وجو -->
+  <div class="search-box">
+    <input type="text" placeholder="جست و جو..." />
+    <img src="search.gif" alt="جست‌وجو" />
+  </div>
 
-<div class="quick-filters">
-  <a href="earthquake-top/index.html" class="filter-box">زلزله</a>
-</div>
+  <!-- فیلترهای سریع -->
+  <div class="quick-filters">
+    <a href="earthquake-top/index.html" class="filter-box">زلزله</a>
+  </div>
 
-<!-- دانستنی‌ها -->
+  <!-- دانستنی ها -->
 <div class="section-header">
-  <div class="section-title">دانستنی‌ها</div>
+  <div class="section-title">دانستی ها</div>
   <a href="popular/index.html" class="more-button">
     <span>بیشتر</span>
     <img src="more.png" alt="بیشتر" />
   </a>
 </div>
 
-<!-- زلزله‌های استان (۱۴۰۴) -->
-<div class="section-header">
-  <div class="section-title">زلزله‌های استان (۱۴۰۴)</div> <a href="earthquake/index.html" class="more-button">
-    <span>بیشتر</span>
-    <img src="more.png" alt="بیشتر" />
+<div class="card-section">
+  <a class="card" href="popular/card8/index.html">
+    <img src="image1.png" alt="تصویر 8"/>
+    <div class="card-title">کره زمین</div>
+    <div class="card-text">لایه‌بندی کره زمین</div>
+  </a>
+  <a href="popular/card7/index.html" class="card">
+    <img src="image2.png" alt="تصویر 7" />
+    <div class="card-title">بیست و دوم فروردین</div>
+    <div class="card-text">روز ایمنی ورود به فضای بسته</div>
+  </a>
+  <a href="popular/card6/index.html" class="card">
+    <img src="popular/image-card6.png" alt="تصویر 6" />
+    <div class="card-title">منشا پیدایش مخاطرات طبیعی</div>
+    <div class="card-text">"آب و هوایی" و "زمین‌ساختی"</div>
+  </a>
+  <a href="popular/card5/index.html" class="card">
+    <img src="popular/image-card5.png" alt="تصویر 5" />
+    <div class="card-title">موضوعات اصلی مواد قانون مدیریت بحران کشور</div>
+    <div class="card-text">(مصوب ۱۳۹۸/۵/۷)</div>
+  </a>
+  <a href="popular/card1/index.html" class="card">
+    <img src="popular/image-card1.png" alt="تصویر ۱" />
+    <div class="card-title">مدیریت شرایط اضطراری FEMA</div>
+    <div class="card-text">گام های تدوین برنامه عملیات اضطراری</div>
   </a>
 </div>
-<div class="subtitle-2">آخرین گزارش‌ها از مناطق زلزله‌خیز سیستان و بلوچستان</div>
+   
+
+  <!-- زلزله های استان-->
+
+<div class="section-title">زلزله‌های استان (۱۴۰۴)</div><div class="subtitle-2">آخرین گزارش‌ها از مناطق زلزله‌خیز سیستان و بلوچستان</div>
 
 <div class="cards-container-2">
+  <!-- کارت نمونه -->
   <div class="modern-card-2">
     <div class="card-image-2" style="background-image: url('image-card.jpg');"></div>
     <div class="glass-bar-2">
@@ -315,7 +409,94 @@
       <a href="earthquake/card1/index.html" class="open-button-2">جزئیات</a>
     </div>
   </div>
+
+  <!-- کارت دیگر -->
+  <div class="modern-card-2">
+    <div class="card-image-2" style="background-image: url('image-card2.jpg');"></div>
+    <div class="glass-bar-2">
+      <div class="logo-area-2">
+        <img src="mls-logo2.png" alt="لوگو" class="logo-2">
+        <div class="text-content-2">
+          <div class="event-title-2">1404/01/12</div>
+          <div class="event-description-2">خاش، استان سیستان و بلوچستان</div>
+        </div>
+      </div>
+      <a href="earthquake/card2/index.html" class="open-button-2">جزئیات</a>
+    </div>
+  </div>
 </div>
 
+
+  <!-- زلزله -->
+  <div class="section-header">
+    <div class="section-title">زمین لرزه</div>
+    <a href="earthquake-top/index.html" class="more-button">
+      <span>بیشتر</span>
+      <img src="more.png" alt="بیشتر" />
+    </a>
+  </div>
+  <div class="card-section">
+    <a href="earthquake-top/card7/index.html" class="card">
+      <img src="image2.png" alt="تصویر 7" />
+      <div class="card-title">مقیاس بزرگیMW</div>
+      <div class="card-text">افزایش مقدار بزرگی زمین لرزه و مقدار انرژی آزاد شده</div>
+    </a>
+    <a href="earthquake-top/card6/index.html" class="card">
+      <img src="image2.png" alt="تصویر 6" />
+      <div class="card-title">بزرگی زمین لرزه</div>
+      <div class="card-text">تعیین معیار برای مقایسه و سنجش زمین لزره ها</div>
+    </a>
+    <a href="earthquake-top/card5/index.html" class="card">
+      <img src="earthquake-top/image-card5.png" alt="تصویر 5" />
+      <div class="card-title">شدت زمین لرزه</div>
+      <div class="card-text">سطح بندی شدت لرزه ناشی از زمین لرزه</div>
+    </a>
+    <a href="earthquake-top/card4/index.html" class="card">
+      <img src="earthquake-top/image-card4.png" alt="تصویر 4" />
+      <div class="card-title">سابقه لرزه خیزی در منطقه و وقوع زمین لرزه میانمار</div>
+      <div class="card-text">بزرگی ٧.٧ ریشتر</div>
+    </a>
+    
+  </div>
+  <!-- زلزله های استان-->
+
+<div class="section-title">زلزله‌های استان (۱۴۰۴)</div><div class="subtitle-2">آخرین گزارش‌ها از مناطق زلزله‌خیز سیستان و بلوچستان</div>
+
+<div class="cards-container-2">
+  <!-- کارت نمونه -->
+  <div class="modern-card-2">
+    <div class="card-image-2" style="background-image: url('image-card.jpg');"></div>
+    <div class="glass-bar-2">
+      <div class="logo-area-2">
+        <img src="mls-logo.png" alt="لوگو" class="logo-2">
+        <div class="text-content-2">
+          <div class="event-title-2">1404/01/15</div>
+          <div class="event-description-2">گشت، استان سیستان و بلوچستان</div>
+        </div>
+      </div>
+      <a href="earthquake/card1/index.html" class="open-button-2">جزئیات</a>
+    </div>
+  </div>
+
+  <!-- کارت دیگر -->
+  <div class="modern-card-2">
+    <div class="card-image-2" style="background-image: url('image-card2.jpg');"></div>
+    <div class="glass-bar-2">
+      <div class="logo-area-2">
+        <img src="mls-logo2.png" alt="لوگو" class="logo-2">
+        <div class="text-content-2">
+          <div class="event-title-2">1404/01/12</div>
+          <div class="event-description-2">خاش، استان سیستان و بلوچستان</div>
+        </div>
+      </div>
+      <a href="earthquake/card2/index.html" class="open-button-2">جزئیات</a>
+    </div>
+  </div>
+</div>
+
+  <!-- فوتر -->
+  <footer>
+    طراح وب‌سایت: مهندس طاها سرگزی
+  </footer>
 </body>
 </html>

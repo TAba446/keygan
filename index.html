@@ -8,7 +8,22 @@
       font-family: sans-serif;
       background-color: #f9f9f9;
       padding: 20px;
+      text-align: right;
     }
+
+    /* عنوان اصلی و زیرعنوان جدا از کارت */
+    .main-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .main-subtitle {
+      color: gray;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
     .container {
       background: white;
       border-radius: 20px;
@@ -16,49 +31,44 @@
       width: 400px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .title {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    .subtitle {
-      color: gray;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-    .section-title {
-      color: gray;
-      font-weight: bold;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
+
     .app {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 15px;
+      padding: 10px 0;
     }
+
+    .app + .app {
+      border-top: 1px solid #eee;
+    }
+
     .app-info {
       display: flex;
       align-items: center;
     }
+
     .app img {
       width: 50px;
       height: 50px;
       border-radius: 12px;
       margin-left: 10px;
     }
+
     .app-text {
       display: flex;
       flex-direction: column;
     }
+
     .app-title {
       font-weight: bold;
     }
+
     .app-subtitle {
       font-size: 12px;
       color: gray;
     }
+
     .button {
       background-color: #e0e0e0;
       border: none;
@@ -67,6 +77,7 @@
       font-size: 14px;
       cursor: pointer;
     }
+
     .button.update {
       background-color: #007aff;
       color: white;
@@ -74,11 +85,13 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="title">بدون توقف بدو!</div>
-    <div class="subtitle">در این بازی‌های دوندگی بی‌پایان</div>
-    <div class="section-title">آموزش بازی</div>
 
+  <!-- عنوان و زیرعنوان -->
+  <div class="main-title">بدون توقف بدو!</div>
+  <div class="main-subtitle">در این بازی‌های دوندگی بی‌پایان</div>
+
+  <!-- کارت بازی‌ها -->
+  <div class="container">
     <div class="app">
       <div class="app-info">
         <img src="subway.png" alt="Subway Surfers">
@@ -111,8 +124,7 @@
       </div>
       <button class="button">جزئیات</button>
     </div>
-
-    <!-- ادامه برنامه‌ها -->
   </div>
+
 </body>
 </html>

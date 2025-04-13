@@ -1,43 +1,118 @@
-<!-- بخش شماره ۳: عنوان + کارت‌های زلزله به سبک مدرن -->
-<section id="earthquake-section">
-  <!-- عنوان و زیرعنوان -->
-  <div class="section-header">
-    <div>
-      <div class="section-title">زلزله‌های استان (۱۴۰۴)</div>
-      <div class="subtitle-2">آخرین گزارش‌ها از مناطق زلزله‌خیز سیستان و بلوچستان</div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بازی‌های دوندگی بی‌پایان</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      color: gray;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .section-title {
+      color: gray;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .app {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .app-info {
+      display: flex;
+      align-items: center;
+    }
+    .app img {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+    .app-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .app-title {
+      font-weight: bold;
+    }
+    .app-subtitle {
+      font-size: 12px;
+      color: gray;
+    }
+    .button {
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 14px;
+      padding: 6px 14px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .button.update {
+      background-color: #007aff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">بدون توقف بدو!</div>
+    <div class="subtitle">در این بازی‌های دوندگی بی‌پایان</div>
+    <div class="section-title">آموزش بازی</div>
 
-  <!-- کارت‌ها -->
-  <div class="cards-container-2">
-    <!-- کارت اول -->
-    <div class="modern-card-2">
-      <div class="card-image-2" style="background-image: url('image-card.jpg');"></div>
-      <div class="glass-bar-2">
-        <div class="logo-area-2">
-          <img src="mls-logo.png" alt="لوگو" class="logo-2">
-          <div class="text-content-2">
-            <div class="event-title-2">1404/01/15</div>
-            <div class="event-description-2">گشت، استان سیستان و بلوچستان</div>
-          </div>
+    <div class="app">
+      <div class="app-info">
+        <img src="subway.png" alt="Subway Surfers">
+        <div class="app-text">
+          <div class="app-title">ساب‌وی سرفرز</div>
+          <div class="app-subtitle">به دوندگی بی‌پایان بپیوند!</div>
         </div>
-        <a href="earthquake/card1/index.html" class="open-button-2">جزئیات</a>
       </div>
+      <button class="button update">بروزرسانی</button>
     </div>
 
-    <!-- کارت دوم -->
-    <div class="modern-card-2">
-      <div class="card-image-2" style="background-image: url('image-card2.jpg');"></div>
-      <div class="glass-bar-2">
-        <div class="logo-area-2">
-          <img src="mls-logo2.png" alt="لوگو" class="logo-2">
-          <div class="text-content-2">
-            <div class="event-title-2">1404/01/12</div>
-            <div class="event-description-2">خاش، استان سیستان و بلوچستان</div>
-          </div>
+    <div class="app">
+      <div class="app-info">
+        <img src="minion.png" alt="Minion Rush">
+        <div class="app-text">
+          <div class="app-title">مینیون راش</div>
+          <div class="app-subtitle">دوندگی بی‌پایان با مینیون‌ها</div>
         </div>
-        <a href="earthquake/card2/index.html" class="open-button-2">جزئیات</a>
       </div>
+      <button class="button">جزئیات</button>
     </div>
+
+    <div class="app">
+      <div class="app-info">
+        <img src="templerun.png" alt="Temple Run 2">
+        <div class="app-text">
+          <div class="app-title">تمپل ران ۲</div>
+          <div class="app-subtitle">بدو، بپر، فرار کن!</div>
+        </div>
+      </div>
+      <button class="button">جزئیات</button>
+    </div>
+
+    <!-- ادامه برنامه‌ها -->
   </div>
-</section>
+</body>
+</html>

@@ -324,6 +324,84 @@
   .open-button-2:hover {
     background-color: rgba(0, 0, 0, 0.9);
   }
+    body {  /* ۳ */
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: right;
+    }
+
+    .main-title {  /* ۳ */
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .main-subtitle {  /* ۳ */
+      color: gray;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .container {  /* ۳ */
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .app {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .app + .app {
+      border-top: 1px solid #eee;
+    }
+
+    .app-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .app img {  /* ۳ */
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+
+    .app-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-title {  /* ۳ */
+      font-weight: bold;
+    }
+
+    .app-subtitle {  /* ۳ */
+      font-size: 12px;
+      color: gray;
+    }
+
+    .button {  /* ۳ */
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 14px;
+      padding: 6px 14px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .button.update {
+      background-color: #007aff;
+      color: white;
+    }
+ 
   </style>
   
 </head>
@@ -502,60 +580,51 @@
     </div>
   </div>
 </div>
-<!-- بخش بازی‌های دوندگی بی‌پایان -->
-<div class="section-header">
+  <!--کارت های بازی-->
+ <div class="section-header">
   <div>
-    <div class="section-title-2">بدون توقف بدو!</div>
-    <div class="subtitle-2">در این بازی‌های دوندگی بی‌پایان</div>
-  </div>
-</div>
-
-<div class="cards-container-2">
-  <!-- کارت ساب‌وی سرفرز -->
-  <div class="modern-card-2">
-    <div class="card-image-2" style="background-image: url('subway.png');"></div>
-    <div class="glass-bar-2">
-      <div class="logo-area-2">
-        <img src="subway.png" alt="ساب‌وی سرفرز" class="logo-2">
-        <div class="text-content-2">
-          <div class="event-title-2">ساب‌وی سرفرز</div>
-          <div class="event-description-2">به دوندگی بی‌پایان بپیوند!</div>
+<div class="section-title">بدون توقف بدو!</div>  <!-- ۳ -->
+  <div class="subtitle">در این بازی‌های دوندگی بی‌پایان</div>  <!-- ۳ -->
+     </div>
+ </div>
+  <div class="container">  <!-- ۳ -->
+    <div class="app">
+      <div class="app-info">
+        <img src="subway.png" alt="Subway Surfers">  <!-- ۳ -->
+        <div class="app-text">
+          <div class="app-title">ساب‌وی سرفرز</div>  <!-- ۳ -->
+          <div class="app-subtitle">به دوندگی بی‌پایان بپیوند!</div>  <!-- ۳ -->
         </div>
       </div>
-      <a href="#" class="open-button-2">جزئیات</a>
+      <button class="button">جزئیات</button>  <!-- ۳ -->
+    </div>
+
+    <div class="app">
+      <div class="app-info">
+        <img src="minion.png" alt="Minion Rush">  <!-- ۳ -->
+        <div class="app-text">
+          <div class="app-title">مینیون راش</div>  <!-- ۳ -->
+          <div class="app-subtitle">دوندگی بی‌پایان با مینیون‌ها</div>  <!-- ۳ -->
+        </div>
+      </div>
+      <button class="button">جزئیات</button>  <!-- ۳ -->
+    </div>
+
+    <div class="app">
+      <div class="app-info">
+        <img src="templerun.png" alt="Temple Run 2">  <!-- ۳ -->
+        <div class="app-text">
+          <div class="app-title">تمپل ران ۲</div>  <!-- ۳ -->
+          <div class="app-subtitle">بدو، بپر، فرار کن!</div>  <!-- ۳ -->
+        </div>
+      </div>
+      <button class="button">جزئیات</button>  <!-- ۳ -->
     </div>
   </div>
 
-  <!-- کارت مینیون راش -->
-  <div class="modern-card-2">
-    <div class="card-image-2" style="background-image: url('minion.png');"></div>
-    <div class="glass-bar-2">
-      <div class="logo-area-2">
-        <img src="minion.png" alt="مینیون راش" class="logo-2">
-        <div class="text-content-2">
-          <div class="event-title-2">مینیون راش</div>
-          <div class="event-description-2">دوندگی بی‌پایان با مینیون‌ها</div>
-        </div>
-      </div>
-      <a href="#" class="open-button-2">جزئیات</a>
-    </div>
-  </div>
+</body>
+</html>
 
-  <!-- کارت تمپل ران -->
-  <div class="modern-card-2">
-    <div class="card-image-2" style="background-image: url('templerun.png');"></div>
-    <div class="glass-bar-2">
-      <div class="logo-area-2">
-        <img src="templerun.png" alt="تمپل ران ۲" class="logo-2">
-        <div class="text-content-2">
-          <div class="event-title-2">تمپل ران ۲</div>
-          <div class="event-description-2">بدو، بپر، فرار کن!</div>
-        </div>
-      </div>
-      <a href="#" class="open-button-2">جزئیات</a>
-    </div>
-  </div>
-</div>
   <!-- فوتر -->
   <footer>
     طراح وب‌سایت: مهندس طاها سرگزی

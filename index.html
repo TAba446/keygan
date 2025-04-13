@@ -43,14 +43,16 @@
 
     /* جست‌وجو */
     .search-box {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 8px 12px;
-      margin: 15px 20px;
-      max-width: 400px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 15px auto; /* وسط‌چینی از چپ و راست */
+  width: 100%;
+  max-width: 340px;
+  box-sizing: border-box;
     }
 
     .search-box input {
@@ -94,7 +96,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 20px;
+      margin: 20px 20px 10px 20px;
     }
 
     .section-title {
@@ -126,7 +128,7 @@
     }
 
     .card {
-      min-width: 200px;
+      width: 100%;
       max-width: 200px;
       background: white;
       border-radius: 10px;
@@ -162,35 +164,6 @@
     .card-section a .card-text {
       text-decoration: none;
       color: inherit;
-    }
-
-    /* ریسپانسیو */
-    @media screen and (max-width: 768px) {
-      .card {
-        min-width: 160px;
-        max-width: 160px;
-      }
-
-      .header-text h1 {
-        font-size: 18px;
-      }
-
-      .header-text h2 {
-        font-size: 13px;
-      }
-
-      .search-box {
-        max-width: 100%;
-        margin: 15px;
-      }
-    }
-
-    /* فوتر */
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #f1f1f1;
-      margin-top: 50px;
     }
     
 <!-- زلزله‌های استان (1404) - طراحی جدید -->
@@ -324,6 +297,102 @@
   .open-button-2:hover {
     background-color: rgba(0, 0, 0, 0.9);
   }
+    /*اپلیکیشن */
+    .container { 
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .app {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .app + .app {
+      border-top: 1px solid #eee;
+    }
+
+    .app-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .app img {  /* ۳ */
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+
+    .app-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-title {  /* ۳ */
+      font-weight: bold;
+    }
+
+    .app-subtitle {  /* ۳ */
+      font-size: 12px;
+      color: gray;
+    }
+
+    .button {  /* ۳ */
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 14px;
+      padding: 6px 14px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .button.update {
+      background-color: #007aff;
+      color: white;
+    }
+ /* ریسپانسیو */
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 100%;
+        max-width: 160px;
+        margin: 0 auto;
+      }
+      .modern-card2 {
+        flex 0 0 90%;
+        max-width: 90%;
+      }
+      .Container {
+        width: 90;
+      }
+      .header-text h1 {
+        font-size: 18px;
+      }
+
+      .header-text h2 {
+        font-size: 13px;
+      }
+
+      .search-box {
+        max-width: calc(100% - 30px);
+        margin: 15px;
+      }
+    }
+
+    /* فوتر */
+    footer {
+      text-align: center;
+      padding: 10px 20px;
+      background-color: #f1f1f1;
+      margin-top: 50px;
+    }
+    
   </style>
   
 </head>
@@ -502,6 +571,50 @@
     </div>
   </div>
 </div>
+  <!--کارت های بازی-->
+ <div class="section-header">
+  <div>
+<div class="section-title">بدون توقف بدو!</div>  <!-- ۳ -->
+  <div class="subtitle">در این بازی‌های دوندگی بی‌پایان</div>  <!-- ۳ -->
+     </div>
+ </div>
+  <div class="container">  <!-- ۳ -->
+    <div class="app">
+      <div class="app-info">
+        <img src="subway.png" alt="Subway Surfers">  <!-- ۳ -->
+        <div class="app-text">
+          <div class="app-title">ساب‌وی سرفرز</div>  <!-- ۳ -->
+          <div class="app-subtitle">به دوندگی بی‌پایان بپیوند!</div>  <!-- ۳ -->
+        </div>
+      </div>
+      <button class="button">جزئیات</button>  <!-- ۳ -->
+    </div>
+
+    <div class="app">
+      <div class="app-info">
+        <img src="minion.png" alt="Minion Rush">  <!-- ۳ -->
+        <div class="app-text">
+          <div class="app-title">مینیون راش</div>  <!-- ۳ -->
+          <div class="app-subtitle">دوندگی بی‌پایان با مینیون‌ها</div>  <!-- ۳ -->
+        </div>
+      </div>
+      <button class="button">جزئیات</button>  <!-- ۳ -->
+    </div>
+
+    <div class="app">
+      <div class="app-info">
+        <img src="templerun.png" alt="Temple Run 2">  <!-- ۳ -->
+        <div class="app-text">
+          <div class="app-title">تمپل ران ۲</div>  <!-- ۳ -->
+          <div class="app-subtitle">بدو، بپر، فرار کن!</div>  <!-- ۳ -->
+        </div>
+      </div>
+      <button class="button">جزئیات</button>  <!-- ۳ -->
+    </div>
+  </div>
+
+</body>
+</html>
 
   <!-- فوتر -->
   <footer>
